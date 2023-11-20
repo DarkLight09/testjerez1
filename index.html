@@ -1,57 +1,26 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='utf-8'></meta>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'></meta>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-</head>
-	
-<body style='margin: 0; overflow: hidden;'>
-    <a-scene vr-mode-ui="enabled: false" 
-	    embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; 
-	    displayHeight: 960; debugUIEnabled: false;'>
+  </head>
 
-	<a-sphere material="color: red" radius="0.5" animation="property: object3D.position.y; to: 3; dir: alternate; dur: 1000; loop: true"
-	  gps-entity-place="latitude: 36.676817; longitude: -6.119724;">
-	  </a-sphere>
-	<a-cylinder color="yellow" height="10" radius="0.4"
-	  gps-entity-place="latitude: 36.676235; longitude: -6.119420;">
-	  </a-cylinder>
-	<a-cylinder color="yellow" height="10" radius="1"
-	  gps-entity-place="latitude: 36.676298; longitude: -6.119415;">
-	  </a-cylinder>
-	<a-sphere material="color: red" radius="0.5" animation="property: object3D.position.y; to: 3; dir: alternate; dur: 1000; loop: true"
-	  gps-entity-place="latitude: 36.621830; longitude: -6.356187;">
-	  </a-sphere>
-	<a-sphere material="color: blue" radius="0.1" animation="property: object3D.position.y; to: 3; dir: alternate; dur: 1000; loop: true"
-	  gps-entity-place="latitude: 36.641210; longitude: -6.354001;">
-	  </a-sphere>
-	<a-entity material="color: white" geometry="primitive: cone; height: 1; radiusBottom: 0.01; radiusTop: 0.05" animation="property: object3D.position.y; to: 3; dir: alternate; dur: 1000; loop: true"
-	  gps-entity-place="latitude: 36.622087; longitude: -6.355660;"></a-entity> 
-	    <a-text value="STATION 3" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.641309; longitude: -6.353460;"></a-text>
-	    <a-text value="Desayunos aquí" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.630464; longitude: -6.366413;"></a-text>
-	    <a-cylinder color="yellow" height="10" radius="0.2"
-	  gps-entity-place="latitude: 36.641358; longitude: -6.353112;"></a-cylinder>
-	    <a-text value="HANGAR" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.641742; longitude: -6.353251"></a-text>
-	    <a-text value="ROTONDA" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.630237; longitude: -6.366550"></a-text>
-	    <a-text value="MAXIDIA" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.62996943678511; longitude: -6.365447442041396"></a-text>
-	    <a-text value="ROTONDA" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.630237; longitude: -6.366550"></a-text>
-	    <a-text value="XEREX" look-at="[gps-camera]" scale="1 1 1"
-	  gps-entity-place="latitude: 36.676236; longitude: -6.119380"></a-text>
-	    
-        <a-camera gps-camera rotation-reader></a-camera>
-	</a-scene>
-</body>
+  <body>
+    <a-scene
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+    >
+      <a-text
+        value="This content will always face you."
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: <add-your-latitude>; longitude: <add-your-longitude>;"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+  </body>
 </html>
