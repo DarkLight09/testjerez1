@@ -13,10 +13,9 @@
 </head>
 	
 <body style='margin: 0; overflow: hidden;'>
-    <a-scene
-        vr-mode-ui="enabled: false"
-		embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-scene vr-mode-ui="enabled: false" 
+	    embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; 
+	    displayHeight: 960; debugUIEnabled: false;'>
 
 	<a-sphere material="color: red" radius="0.5" animation="property: object3D.position.y; to: 3; dir: alternate; dur: 1000; loop: true"
 	  gps-entity-place="latitude: 36.676817; longitude: -6.119724;">
